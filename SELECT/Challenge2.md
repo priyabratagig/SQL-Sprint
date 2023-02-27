@@ -1,5 +1,5 @@
-|customer_name|city||
-|--|--||
+|customer_last_name|city|
+|--|--|
 |Bernard|Seattle|
 |Reilly|Seattle|
 |Lawson|Seattle|
