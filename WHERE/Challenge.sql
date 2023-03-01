@@ -1,4 +1,4 @@
--- Challenge:
+-- Challenge 12:
 -- Select products from the oes.products table which have
 -- a price greater than $100.
 
@@ -6,7 +6,7 @@ SELECT *
 FROM oes.products
 WHERE list_price > 100;
 
--- Challenge:
+-- Challenge 13:
 -- Select all orders from the oes.orders table which have
 -- not yet been shipped.
 -- Hint:
@@ -16,7 +16,7 @@ SELECT *
 FROM oes.orders
 WHERE shipped_date IS NULL;
 
--- Challenge:
+-- Challenge 14:
 -- Select all orders from the oes.orders table which were
 -- placed on the 26th of February 2020.
 -- Hint:
@@ -28,7 +28,7 @@ SELECT *
 FROM oes.orders
 WHERE order_date = '20200226';
 
--- Challenge:
+-- Challenge 15:
 -- Select all orders from the oes.orders table which were
 -- placed on or after the 1st of January 2020.
 -- Hint:
