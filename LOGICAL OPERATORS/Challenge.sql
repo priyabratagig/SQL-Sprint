@@ -1,44 +1,50 @@
--- Challenge:
--- Write query to give the total number of employees in
--- each department as given by the department_id column
--- in the hcm.employees table.
--- Hints:
--- Use the COUNT aggregate function in the SELECT clause.
--- Also, use a GROUP BY clause. Note that all the challenges
--- in this lecture also require a GROUP BY clause. 
-
-
-
--- Challenge:
--- Write a query to give the average salary in each
--- department as given by the department_id column in the
--- hcm.employees table. Order the query result by average
--- salary from highest to lowest.
+-- Challenge 25:
+-- Select employees from the hcm.employees table who live
+-- in either Seattle or Sydney.
 -- Hint:
--- Include the AVG aggregate function in the SELECT
--- clause.
+-- Use the OR operator.
 
+SELECT *
+FROM hcm.employees
+WHERE city = 'Seattle' OR city = 'Sydney';
 
--- Challenge:
--- Write a query to give the total number of products on hand at
--- each warehouse as given by the warehouse_id column in the
--- oes.inventories table. Also, limit the result to only
--- warehouses which have greater than 5,000 product items on
--- hand.
--- Hints:
--- Use the SUM aggregate function in the SELECT clause.
--- Include a HAVING clause in the query. The HAVING clause will
--- also have the SUM aggregate function.
-
--- Challenge:
--- What is the date of the most recent population count at
--- each locality in the bird.antarctic_populations table?
+-- Challenge 26:
+-- Select employees who live in any of the following cities:
+-- - Seattle
+-- - Sydney
+-- - Ascot
+-- - Hillston
 -- Hint:
--- Use the MAX aggregate function in the SELECT clause.
+-- Use the IN operator.
 
--- Challenge:
--- What is the date of the most recent population count for each
--- species at each locality in the bird.antarctic_populations
--- table?
+SELECT *
+FROM hcm.employees
+WHERE city IN ('Seattle', 'Sydney', 'Ascot', 'Hillston');
+
+-- Challenge 27:
+-- Select employees from Sydney who have a salary greater
+-- than $200,000.
 -- Hint:
--- You will need to group by more than one column.
+-- Use the AND operator.
+
+SELECT *
+FROM hcm.employees
+WHERE city = 'Sydney' AND salary > 200000;
+
+-- Challenge 28:
+-- Select employees who live in either Seattle or Sydney
+-- and were also hired on or after 1st January 2019.
+-- Hint:
+-- Use both the OR and the AND logical operator.
+
+SELECT *
+FROM hcm.employees
+WHERE (city = 'Seattle' OR city = 'Sydney') AND hire_date >= '20190101';
+
+-- Challenge 29:
+-- Select products from the oes.products table which do
+-- not have a product category_id of either 1, 2, or 5.
+
+SELECT *
+FROM oes.products
+WHERE category_id NOT IN (1,2,5);
